@@ -1,60 +1,64 @@
- # DevPulse 🚀
+# DevPulse 🚀
 
-DevPulse is a modern, sleek, and lightweight desktop widget designed specifically for developers and power users. Built with Python and PyQt6, it brings real-time system monitoring, productivity tools, and quick note-taking directly to your desktop with a stunning glassmorphism interface.
+DevPulse is a modern, lightweight, and customizable desktop widget designed for real-time system monitoring and productivity. Built with Python 3.14 and PyQt6, it features a frameless dark glassmorphism interface, smooth window animations, and system tray integration.
 
- (Replace with actual screenshot)
+✨ Key Features
 
-✨ Features
+🎨 Modern Glassmorphism UI: Frameless, dark-mode window with custom title bar interactions and smooth entry animations (show_animated()).
 
-🎨 Glassmorphism UI: Frameless, rounded, dark-themed user interface with subtle acrylic transparency.
+📊 Live System Monitoring: Real-time tracking of CPU and RAM usage powered by psutil.
 
-📊 Real-time System Monitor: Live, animated tracking of CPU and RAM utilization powered by psutil.
+🔔 System Tray Integration: Runs quietly in the background without cluttering your taskbar.
 
-⏱️ Focus / Pomodoro Timer: Keep your productivity high with customizable work/break timers.
+📦 Executable Ready: Configured with PyInstaller for single-click .exe standalone distribution.
 
-📝 Quick Scratchpad: Instant sticky-notes area for quick commands, task lists, or reminders.
+📂 Project Structure
 
-📌 Always-On-Top Toggle: Pin the widget over active windows or let it rest quietly on your desktop.
+devpulse/
+│
+├── assets/                 # Icons (devpulse.ico), styles, and UI resources
+├── build/                  # PyInstaller build artifacts
+├── dist/                   # Compiled standalone binaries (DevPulse.exe)
+├── installer/              # Installer payload & packaging scripts
+├── widgets/                # Modular PyQt6 UI components & main window logic
+│   └── main_window.py      # Core window controller and animations
+├── .gitignore              # Git ignore rules for venv, build, and Python artifacts
+├── DevPulse.spec           # PyInstaller build specification
+├── main.py                 # Application entry point & tray setup
+├── pyvenv.cfg              # Python virtual environment configuration
+├── requirements.txt        # Runtime dependencies (PyQt6, psutil)
+├── requirements-build.txt  # Build & packaging dependencies (PyInstaller, Pillow)
+└── README.md               # Project documentation
 
-🔔 System Tray Integration: Easily minimize to the system tray for zero desktop clutter.
 
-🛠️ Tech Stack
-
-Language: Python 3.9+
-
-GUI Framework: PyQt6
-
-System Metrics: psutil
-
-🚀 Quick Start
+🚀 Getting Started
 
 Prerequisites
 
-Make sure you have Python installed on your system.
+Python 3.9+ (Tested on Python 3.14)
 
-python --version
+Windows 10/11 (or Linux/macOS with PyQt6 support)
 
-
-Installation
+🔧 Local Setup & Execution
 
 Clone the repository:
 
-git clone https://github.com/your-username/devpulse.git
+git clone https://github.com/DeveloperHumanReat/devpulse.git
 cd devpulse
 
 
-Create a virtual environment (Optional but recommended):
+Create and activate a virtual environment:
 
-# Windows
-python -m venv venv
-venv\Scripts\activate
+# Windows (Command Prompt / PowerShell)
+python -m venv .venv
+.venv\Scripts\activate
 
 # macOS / Linux
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 
 
-Install dependencies:
+Install runtime dependencies:
 
 pip install -r requirements.txt
 
@@ -64,34 +68,48 @@ Run the application:
 python main.py
 
 
-📂 Project Structure
+🛠️ Building Standalone Executable (.exe)
 
-devpulse/
-│
-├── assets/             # Icons, styling stylesheets, and images
-├── widgets/            # Custom PyQt6 UI components
-│   ├── system_monitor.py
-│   ├── pomodoro.py
-│   └── quick_notes.py
-├── main.py             # Main entry point & window logic
-├── requirements.txt    # Python dependencies
-└── README.md           # Project documentation
+To build a windowed, standalone .exe using PyInstaller:
+
+Install build requirements:
+
+pip install -r requirements-build.txt
 
 
-🤝 Contributing
+Run PyInstaller with the spec file:
 
-Contributions are always welcome! If you'd like to report a bug or suggest a feature:
+pyinstaller DevPulse.spec
 
-Fork the Project
 
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
+Locate your executable:
+Find your standalone binary in the dist/ directory:
 
-Commit your Changes (git commit -m 'Add some AmazingFeature')
+dist/DevPulse.exe
 
-Push to the Branch (git push origin feature/AmazingFeature)
 
-Open a Pull Request
+🛠️ Tech Stack
+
+Language: Python 3.14
+
+GUI Framework: PyQt6
+
+System Metrics: psutil
+
+Executable Packaging: PyInstaller
+
+Image Utilities: Pillow
+
+👤 Author & Contact
+
+Developed by DeveloperHumanReat.
+
+Developer: DeveloperHumanReat
+
+Email: developerhumanreat@gmail.com
+
+GitHub: @DeveloperHumanReat
 
 📜 License
 
-Distributed under the MIT License. See LICENSE for more information.
+This project is licensed under the MIT License - see the LICENSE file for details.
