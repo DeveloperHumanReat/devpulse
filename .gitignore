@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.idea/
+.vscode/
+build/
+dist/
+installer/payload/
+venv/`n__pycache__/`n.env`n.vscode/
